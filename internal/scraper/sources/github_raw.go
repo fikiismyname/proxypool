@@ -33,8 +33,9 @@ func (s *GithubRawSource) Name() string {
 func (s *GithubRawSource) Fetch(ctx context.Context) ([]*model.Proxy, error) {
 	req, err := http.NewRequestWithContext(ctx, "GET", s.url, nil)
 	if err != nil {
-		return nil, fmt.Errorf("bad request: %w", err)
+		return nil, fmt.Errorf("failed to create request: %w", err)
 	}
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
