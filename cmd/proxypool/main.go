@@ -57,6 +57,10 @@ func main() {
 		sources.NewGithubRawSource("komutan234-SOCKS5", "https://raw.githubusercontent.com/komutan234/Proxy-List-Free/main/proxies/socks5.txt", "socks5"),
 		// hookzof
 		sources.NewGithubRawSource("hookzof-SOCKS5", "https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt", "socks5"),
+		// sunny9577
+		sources.NewGithubRawSource("sunny9577-HTTP", "https://sunny9577.github.io/proxy-scraper/generated/http_proxies.txt", "http"),
+		sources.NewGithubRawSource("sunny9577-SOCKS4", "https://sunny9577.github.io/proxy-scraper/generated/socks4_proxies.txt", "socks4"),
+		sources.NewGithubRawSource("sunny9577-SOCKS5", "https://sunny9577.github.io/proxy-scraper/generated/socks5_proxies.txt", "socks5"),
 	}
 
 	chk := checker.NewChecker("http://google.com", 5*time.Second)
